@@ -1,0 +1,25 @@
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.grid {
+  width: 40%;
+  margin: auto;
+  border: 1px solid black;
+}
+
+.grid:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.col {
+  border: 1px solid white;
+  float:left;
+}
+
+.col.permahover {
+  background-color: black;
+}
