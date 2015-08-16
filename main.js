@@ -34,7 +34,7 @@
     addHover();
   }
 
-  $('input[value="Submit"]').click(function() {
+  function submitButton (){
     var size = parseInt($('input[type="text"]').val());
     if (size > 0 && size <= 100 ){
       $('.container').html('');
@@ -45,10 +45,23 @@
     else {
       alert('Size must be from 1-100!');
     }
-  });
+  }
+
+  $('input[value="Submit"]').click(submitButton);
+
+  $("form input").keypress(function (e) {
+        if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {
+            console.log("enter works");
+            submitButton();
+            return false;
+        } else {
+            return true;
+        }
+    });
 
   $('input[value="Clear Screen"]').click(function() {
     $(".col").removeClass('permahover');
+    addHover();
   });
 
 }());
